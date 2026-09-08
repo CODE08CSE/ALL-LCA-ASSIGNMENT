@@ -1,34 +1,55 @@
-# List
-students = ["Aman", "Riya", "Karan"]
+# =========================================================
+# Course: Python Programming (2026)
+# Assignment 1: Operations on List, Tuple, and Dictionary
+# =========================================================
 
-print("Original List:", students)
-
-students.append("Neha")       # Add
-students[1] = "Priya"         # Update
-students.remove("Karan")      # Delete
-
-print("Updated List:", students)
-
-
-# Tuple
-students_tuple = ("Aman", "Riya", "Karan")
-
-print("\nTuple:", students_tuple)
-print("Length:", len(students_tuple))
-print("Position of Riya:", students_tuple.index("Riya"))
-
-
-# Dictionary
-students_dict = {
-    101: "Aman",
-    102: "Riya",
-    103: "Karan"
+# Step 1: Initializing Data Structures
+student_list = ['Amit', 'Neha', 'Rohan', 'Priya']
+student_ids = (101, 102, 103, 104)
+student_records = {
+    101: 'Amit',
+    102: 'Neha',
+    103: 'Rohan',
+    104: 'Priya'
 }
 
-print("\nOriginal Dictionary:", students_dict)
+print("=== INITIAL DATA ===")
+print("List of Students:", student_list)
+print("Tuple of IDs:", student_ids)
+print("Dictionary of Records:", student_records)
+print("-" * 50)
 
-students_dict[104] = "Neha"   # Add
-students_dict[102] = "Priya"  # Update
-del students_dict[103]        # Delete
+# Step 2: List Operations (Add, Update, Delete)
+print("\n--- Performing List Operations ---")
+student_list.append('Suresh')               # Add using .append()
+print("After Addition:", student_list)
 
-print("Updated Dictionary:", students_dict)
+student_list[1] = 'Sneha'                   # Update using indexing
+print("After Updating index 1:", student_list)
+
+student_list.pop(2)                         # Delete using .pop()
+print("After Popping index 2:", student_list)
+
+# Step 3: Tuple Operations (Add, Update, Delete via Type Casting)
+print("\n--- Performing Tuple Operations ---")
+temp_list = list(student_ids)               # Convert tuple to list due to immutability
+
+temp_list.append(105)                       # Add
+temp_list[2] = 108                          # Update
+temp_list.pop(0)                            # Delete
+
+student_ids = tuple(temp_list)              # Convert back to tuple
+print("Updated Tuple:", student_ids)
+
+# Step 4: Dictionary Operations (Add, Update, Delete)
+print("\n--- Performing Dictionary Operations ---")
+student_records[105] = 'Suresh'             # Add using key assignment
+print("After Adding ID 105:", student_records)
+
+student_records[102] = 'Sneha'              # Update using key assignment
+print("After Updating ID 102:", student_records)
+
+del student_records[101]                    # Delete using del statement
+print("After Deleting ID 101:", student_records)
+
+print("\n=== PROGRAM COMPLETED SUCCESSFULLY ===")
