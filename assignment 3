@@ -1,1 +1,22 @@
+# User-Defined Function Definition
+def is_right_angled(side1, side2, side3):
+    # Sort sides to ensure the largest side is treated as hypotenuse (c)
+    a, b, c = sorted([side1, side2, side3])
+    
+    # Apply Pythagorean theorem: a^2 + b^2 == c^2
+    if (a**2 + b**2) == (c**2):
+        return True
+    else:
+        return False
 
+# Main Execution Block
+# Input: Accepting lengths of three sides from user
+side_a = float(input("Enter length of first side: "))
+side_b = float(input("Enter length of second side: "))
+side_c = float(input("Enter length of third side: "))
+
+# Function Calling
+if is_right_angled(side_a, side_b, side_c):
+    print(f"\nResult: A triangle with sides {side_a}, {side_b}, and {side_c} IS a Right-Angled Triangle.")
+else:
+    print(f"\nResult: A triangle with sides {side_a}, {side_b}, and {side_c} is NOT a Right-Angled Triangle.")
