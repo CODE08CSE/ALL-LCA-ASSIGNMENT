@@ -1,1 +1,34 @@
+# List
+students = ["Aman", "Riya", "Karan"]
 
+print("Original List:", students)
+
+students.append("Neha")       # Add
+students[1] = "Priya"         # Update
+students.remove("Karan")      # Delete
+
+print("Updated List:", students)
+
+
+# Tuple
+students_tuple = ("Aman", "Riya", "Karan")
+
+print("\nTuple:", students_tuple)
+print("Length:", len(students_tuple))
+print("Position of Riya:", students_tuple.index("Riya"))
+
+
+# Dictionary
+students_dict = {
+    101: "Aman",
+    102: "Riya",
+    103: "Karan"
+}
+
+print("\nOriginal Dictionary:", students_dict)
+
+students_dict[104] = "Neha"   # Add
+students_dict[102] = "Priya"  # Update
+del students_dict[103]        # Delete
+
+print("Updated Dictionary:", students_dict)
