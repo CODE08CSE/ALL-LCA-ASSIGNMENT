@@ -1,1 +1,55 @@
+# =========================================================
+# Course: Python Programming (2026)
+# Assignment 4: Matrix Addition using Lists and NumPy
+# =========================================================
 
+import numpy as np
+
+# Step 1: Input dimensions
+r = int(input("Enter number of rows: "))
+c = int(input("Enter number of columns: "))
+
+# Step 2: Accept elements for Matrix A
+print("\nEnter elements for Matrix A:")
+matrix_a = []
+for i in range(r):
+    row = []
+    for j in range(c):
+        val = int(input(f"Element [{i}][{j}]: "))
+        row.append(val)
+    matrix_a.append(row)
+
+# Step 3: Accept elements for Matrix B
+print("\nEnter elements for Matrix B:")
+matrix_b = []
+for i in range(r):
+    row = []
+    for j in range(c):
+        val = int(input(f"Element [{i}][{j}]: "))
+        row.append(val)
+    matrix_b.append(row)
+
+# ---------------------------------------------------------
+# METHOD 1: Addition using Python Nested Lists
+# ---------------------------------------------------------
+result_list = []
+for i in range(r):
+    row = []
+    for j in range(c):
+        row.append(matrix_a[i][j] + matrix_b[i][j])
+    result_list.append(row)
+
+print("\n=== Resultant Matrix using Python Lists ===")
+for row in result_list:
+    print(row)
+
+# ---------------------------------------------------------
+# METHOD 2: Addition using NumPy Array
+# ---------------------------------------------------------
+np_a = np.array(matrix_a)
+np_b = np.array(matrix_b)
+
+result_numpy = np_a + np_b
+
+print("\n=== Resultant Matrix using NumPy Array ===")
+print(result_numpy)
