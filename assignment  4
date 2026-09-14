@@ -25,7 +25,9 @@ for i in range(r):
         row.append(val)
     matrix_b.append(row)
 
-
+# ---------------------------------------------------------
+# METHOD 1: Addition using Python Nested Lists
+# ---------------------------------------------------------
 result_list = []
 for i in range(r):
     row = []
@@ -37,7 +39,9 @@ print("\n=== Resultant Matrix using Python Lists ===")
 for row in result_list:
     print(row)
 
-
+# ---------------------------------------------------------
+# METHOD 2: Addition using NumPy Array
+# ---------------------------------------------------------
 np_a = np.array(matrix_a)
 np_b = np.array(matrix_b)
 
