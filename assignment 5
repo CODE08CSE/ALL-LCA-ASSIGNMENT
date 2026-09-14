@@ -1,1 +1,30 @@
 
+import re
+
+def validate_alphanumeric_regex(input_str):
+    # Pattern matching a-z, A-Z, 0-9 from start (^) to end ($)
+    pattern = r'^[a-zA-Z0-9]+$'
+    if re.match(pattern, input_str):
+        return True
+    return False
+
+def validate_alphanumeric_builtin(input_str):
+    # Alternative approach using built-in string method .isalnum()
+    return input_str.isalnum()
+
+
+user_string = input("Enter a string to test: ")
+
+print("\n--- Validation Results ---")
+
+ Regular Expressions
+if validate_alphanumeric_regex(user_string):
+    print("[RegEx Method]: The string contains ONLY (a-z, A-Z, 0-9).")
+else:
+    print("[RegEx Method]: The string contains invalid characters or spaces.")
+
+ Built-in String Method
+if validate_alphanumeric_builtin(user_string):
+    print("[Built-in Method]: The string is strictly alphanumeric.")
+else:
+    print("[Built-in Method]: The string is NOT strictly alphanumeric.")
