@@ -1,0 +1,24 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('students.csv')
+print(df)
+
+plt.plot(df['Student'], df['Python'], marker='o')
+plt.title('Python Marks')
+plt.show()
+
+plt.bar(df['Student'], df['Maths'])
+plt.title('Maths Marks')
+plt.show()
+
+plt.scatter(df['Maths'], df['Python'])
+plt.xlabel('Maths Marks')
+plt.ylabel('Python Marks')
+plt.show()
+
+sns.heatmap(df[['Maths', 'Python', 'Attendance']].corr(),
+            annot=True)
+plt.show()
